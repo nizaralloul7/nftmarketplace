@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailsActivity"
+    android:background="@drawable/drawable_background_colored"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/firstCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        android:layout_margin="8dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nftImage"
+            android:adjustViewBounds="true"
+            android:padding="0dp"
+            android:src="@drawable/ryden" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nftNameText"
+        android:layout_below="@+id/firstCard"
+        android:text="Ryden-OO21"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/descriptionNft"
+        android:layout_below="@id/nftNameText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Its working fine but i am having a problem, i am using GridLayoutManager with spanCount of 2(default) but user can change the spanCount so when spanCount changes from default position there is a much more visible"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentBid"
+        android:layout_below="@id/descriptionNft"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Current Bid"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentBid"
+        android:id="@+id/prices"
+    >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nftPriceETH"
+                android:layout_gravity="start"
+                android:text="3.45 ETH"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nftPriceUSD"
+                android:layout_gravity="center"
+                android:text="2450USD"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/radius"
+                android:textSize="10dp"
+                />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/iconmonstr_favorite_1"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/prices"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:text="Place Bid"
+        android:background="@drawable/drawable_button_radius"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="Place a Bid !"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/amount"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Amount (ETH)"
+        android:padding="17dp"
+        android:backgroundTint="#EDE9E9"
+        android:background="@drawable/drawable_button_radius_2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/amount"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:id="@+id/registerButton"
+                android:backgroundTint="@color/white"
+                android:text="Place"
+                android:layout_gravity="start"
+                android:background="@drawable/drawable_button_radius_2"
+                android:textSize="11dp"
+                />
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:id="@+id/signInButton"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="end"
+                android:text="Cancel"
+                android:textSize="11dp"
+                android:background="@drawable/drawable_button_radius_2"
+                />
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>
