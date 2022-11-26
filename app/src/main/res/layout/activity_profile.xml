@@ -162,9 +162,11 @@
         >
     </androidx.recyclerview.widget.RecyclerView>
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"
         android:id="@+id/bottonnav"
