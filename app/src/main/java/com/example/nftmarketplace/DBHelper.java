@@ -67,18 +67,14 @@ public class DBHelper extends SQLiteOpenHelper
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        Cursor cursor = db.rawQuery("SELECT Id FROM User WHERE Username = ?", new String[]{bid.getUser().getUserName()});
-        @SuppressLint("Range")
-        long userId = Long.parseLong(cursor.getString(cursor.getColumnIndex("Id")));
-        Cursor cursor1 = db.rawQuery("SELECT Id FROM NFT WHERE nftName = ?", new String[]{bid.getNftModel().getNftName()});
-        @SuppressLint("Range")
-        long nftId = Long.parseLong(cursor1.getString(cursor.getColumnIndex("Id")));
+
+        long userId = bid.getUser();
+
+        long nftId = bid.getNftModel();
         contentValues.put("ownerId",userId);
         contentValues.put("amount",bid.getAmountETH());
         contentValues.put("nftId",nftId);
 
-        cursor.close();
-        cursor1.close();
 
         long result = db.insert("Bid", null, contentValues);
 
@@ -148,6 +144,57 @@ public class DBHelper extends SQLiteOpenHelper
         }
 
         return nftList;
+    }
+
+    @SuppressLint("Range")
+    public int getNFTIdByName(String nftName)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT Id FROM NFT WHERE NftName = ?", new String[]{nftName});
+
+        if(cursor.moveToFirst())
+        {
+            return Integer.parseInt(cursor.getString(cursor.getColumnIndex("Id")));
+        }
+        else
+            return 0;
+
+    }
+
+    @SuppressLint("Range")
+    public int getUserIdByUsername(String username)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT Id FROM User WHERE Username = ?", new String[]{username});
+
+        if(cursor.moveToFirst())
+        {
+            return Integer.parseInt(cursor.getString(cursor.getColumnIndex("Id")));
+        }
+        else
+            return 0;
+    }
+
+    public boolean insertNFT(NFTModel nft)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("PriceETH", nft.getPriceETH());
+        contentValues.put("PriceUSD", nft.getPriceUSD());
+        contentValues.put("NftName", nft.getNftName());
+        contentValues.put("Description", nft.getDescription());
+        contentValues.put("NftPicture", nft.getNftPic());
+        contentValues.put("ownerId",this.getUserIdByUsername(nft.getOwner().getUserName()));
+
+        long result = db.insert("NFT", null, contentValues);
+
+        if(result == -1)
+        {
+            return false;
+        }
+        else
+            return true;
     }
 
 
