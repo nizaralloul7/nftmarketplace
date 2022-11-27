@@ -70,6 +70,7 @@ public class NFTAdapter extends RecyclerView.Adapter<NFTAdapter.ViewHolder>
         });
     }
 
+
     @Override
     public int getItemCount()
     {

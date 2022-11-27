@@ -14,6 +14,8 @@ import com.example.nftmarketplace.models.User;
 
 public class Registration extends AppCompatActivity
 {
+    //TODO : Verify Inputs
+
     TextView logIn;
     DBHelper db;
     EditText userName, email, password, verifyPassword;

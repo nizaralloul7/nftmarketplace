@@ -7,54 +7,80 @@
     android:background="@drawable/drawable_background_colored"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:id="@+id/eclipse"
+                android:src="@drawable/logo_no_background"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                />
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:id="@+id/eclipse"
-        android:src="@drawable/logo_no_background"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
-        />
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/eclipse"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/radius"
+                android:backgroundTint="#D3D2D2"
+                android:hint="Search something"
+                android:paddingLeft="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                tools:ignore="TouchTargetSizeCheck"
+                android:drawableRight="@drawable/ic_baseline_search_24"
+                />
 
-    <EditText
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/eclipse"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:background="@drawable/radius"
-        android:backgroundTint="#D3D2D2"
-        android:hint="Search something"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        tools:ignore="TouchTargetSizeCheck"
-        android:drawableRight="@drawable/ic_baseline_search_24"
-        />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/topCreatorslabel"
+                android:text="Top Creators"
+                android:textStyle="bold"
+                android:layout_below="@id/search"
+                android:layout_margin="20dp"
+                />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/topCreators"
-        android:text="Top Creators"
-        android:textStyle="bold"
-        android:layout_below="@id/search"
-        android:layout_margin="20dp"
-        />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/topCreators"
+                android:layout_below="@+id/topCreatorslabel"
+                android:layout_marginLeft="25dp"
+                />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/topCreators"
-        android:layout_margin="25dp"
-        android:id="@+id/recyclerViewNfts"
-        >
-    </androidx.recyclerview.widget.RecyclerView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/labelNfts"
+                android:text="Trending NFTs"
+                android:textStyle="bold"
+                android:layout_below="@id/topCreators"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/labelNfts"
+                android:layout_margin="25dp"
+                android:id="@+id/recyclerViewNfts"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
