@@ -22,12 +22,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity
 {
     BottomNavigationView bottomNavigationView;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        db = new DBHelper(this);
 
         bottomNavigationView = findViewById(R.id.bottonnav);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -45,6 +47,11 @@ public class MainActivity extends AppCompatActivity
                         new NFTModel("4.51ETH", "3100USD", R.drawable.overstudy_g1,"OverStudy-5v2",user1,"This Nft is ..."),
                         new NFTModel("4.55ETH", "3254USD", R.drawable.arthilarius_g1,"ArtHilarious-g2",user2,"This Nft is ..."),
                 };
+
+        for(NFTModel nftModel : nftModels)
+        {
+            db.insertNFT(nftModel);
+        }
 
         User[] users = new User[]
                 {

@@ -2,25 +2,25 @@ package com.example.nftmarketplace.models;
 
 public class Bid
 {
-    private User user;
+    private int userId;
     private double amountETH;
-    private NFTModel nftModel;
+    private int nftModelId;
 
-    public Bid(User user, double amountETH, NFTModel nftModel)
+    public Bid(int userId, double amountETH, int nftModelId)
     {
-        this.user = user;
+        this.userId = userId;
         this.amountETH = amountETH;
-        this.nftModel = nftModel;
+        this.nftModelId = nftModelId;
     }
 
-    public User getUser()
+    public int getUser()
     {
-        return user;
+        return userId;
     }
 
-    public void setUser(User user)
+    public void setUser(int userId)
     {
-        this.user = user;
+        this.userId = userId;
     }
 
     public double getAmountETH()
@@ -33,13 +33,13 @@ public class Bid
         this.amountETH = amountETH;
     }
 
-    public NFTModel getNftModel()
+    public int getNftModel()
     {
-        return nftModel;
+        return nftModelId;
     }
 
     public void setNftModel(NFTModel nftModel)
     {
-        this.nftModel = nftModel;
+        this.nftModelId = nftModelId;
     }
 }
