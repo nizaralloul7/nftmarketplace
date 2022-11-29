@@ -92,9 +92,9 @@ public class DetailsActivity extends AppCompatActivity
                 switch (item.getItemId())
                 {
                     case R.id.logout :
+                        finish();
                         startActivity(new Intent(DetailsActivity.this, LoginActivity.class));
                         overridePendingTransition(0,0);
-                        finish();
                         return true;
                     case R.id.home :
                         startActivity(new Intent(DetailsActivity.this, MainActivity.class));
@@ -133,15 +133,10 @@ public class DetailsActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 int nftId = db.getNFTIdByName(DetailsActivity.this.getIntent().getStringExtra("nftNameText"));
-                Log.i("NFTNAME : ", DetailsActivity.this.getIntent().getStringExtra("nftNameText") );
-                Log.i("NFTID : " , String.valueOf(nftId));
-               // String ownerUsername = db.getUsernameOwnerByNftId(nftId);
                 int currentNftOwner = db.getIdOwnerByNftId(nftId);
                 String ownerUsername = sharedpreferences.getString("userName", "error");
                 int userId = db.getUserIdByUsername(ownerUsername);
-                Log.i("USERID : ", String.valueOf(userId));
                 double amount = Double.parseDouble(amountPopup.getText().toString());
-                Log.i("AMOUNT : ", String.valueOf(amount));
                 Bid bid = new Bid(userId,amount,nftId, currentNftOwner);
                 boolean isInserted = db.insertBid(bid);
 
