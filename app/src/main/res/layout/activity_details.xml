@@ -7,7 +7,7 @@
     tools:context=".DetailsActivity"
     android:background="@drawable/drawable_background_colored"
     >
-
+<!--TODO: make it scrollable-->
     <androidx.cardview.widget.CardView
         android:id="@+id/firstCard"
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:layout_below="@id/nftNameText"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
-        android:text="Its working fine but i am having a problem, i am using GridLayoutManager with spanCount of 2(default) but user can change the spanCount so when spanCount changes from default position there is a much more visible"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut mauris a lorem pulvinar sollicitudin non nec neque. Nullam ultricies laoreet arcu quis consequat. Vestibulum ac est scelerisque, consequat lorem id, feugiat sem."
         />
 
     <TextView

@@ -36,6 +36,8 @@ public class LoginActivity extends AppCompatActivity
         db = new DBHelper(this);
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
+
+
         registerNow.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -70,6 +72,7 @@ public class LoginActivity extends AppCompatActivity
                     i.putExtra("balance",loggedUser.getBalance());
                     i.putExtra("userLogo",loggedUser.getUserLogo());
                     startActivity(i);
+                    finish();
                 }
                 else
                     Toast.makeText(LoginActivity.this, "Invalid Username or password", Toast.LENGTH_LONG).show();

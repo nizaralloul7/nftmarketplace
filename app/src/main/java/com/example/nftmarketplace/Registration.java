@@ -14,8 +14,6 @@ import com.example.nftmarketplace.models.User;
 
 public class Registration extends AppCompatActivity
 {
-    //TODO : Verify Inputs
-
     TextView logIn;
     DBHelper db;
     EditText userName, email, password, verifyPassword;
@@ -50,7 +48,7 @@ public class Registration extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                User user = new User("nizar", "alloul", userName.getText().toString(),password.getText().toString(),
+                User user = new User("test", "test", userName.getText().toString(),password.getText().toString(),
                         email.getText().toString(), 2000,R.drawable.hape);
                 if(password.getText().toString().equalsIgnoreCase(verifyPassword.getText().toString()))
                 {
@@ -62,6 +60,7 @@ public class Registration extends AppCompatActivity
                         Intent i = new Intent(Registration.this, LoginActivity.class);
                         i.putExtra("username", userName.getText().toString());
                         startActivity(i);
+                        finish();
                     }
                     else
                         Toast.makeText(Registration.this,"Account not created !", Toast.LENGTH_LONG).show();

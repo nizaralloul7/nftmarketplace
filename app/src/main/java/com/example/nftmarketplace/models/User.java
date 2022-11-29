@@ -11,7 +11,7 @@ public class User
     private String password;
     private String email;
     private double balance;
-    private Integer userLogo;
+    private int userLogo;
     private List<NFTModel> ownedNfts;
 
     public User(String firstName, String lastName, String userName, String password, String email, double balance, Integer userLogo)
@@ -33,11 +33,11 @@ public class User
         this.ownedNfts = ownedNfts;
     }
 
-    public Integer getUserLogo() {
+    public int getUserLogo() {
         return userLogo;
     }
 
-    public void setUserLogo(Integer userLogo) {
+    public void setUserLogo(int userLogo) {
         this.userLogo = userLogo;
     }
 

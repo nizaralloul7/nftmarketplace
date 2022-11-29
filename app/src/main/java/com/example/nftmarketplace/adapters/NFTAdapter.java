@@ -44,16 +44,15 @@ public class NFTAdapter extends RecyclerView.Adapter<NFTAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position)
     {
-
         final NFTModel myListData = nftModelList[position];
         holder.nftImage.setImageResource(nftModelList[position].getNftPic());
         holder.userIcon.setImageResource(nftModelList[position].getOwner().getUserLogo());
         holder.nftNameText.setText(nftModelList[position].getNftName());
-        holder.nftPriceETH.setText(nftModelList[position].getPriceETH());
+        holder.nftPriceETH.setText(nftModelList[position].getPriceETH()+"ETH");
         holder.nftPriceUSD.setText(nftModelList[position].getPriceUSD());
         holder.ownerName.setText(nftModelList[position].getOwner().getUserName());
+       // holder.descriptionNft.setText(nftModelList[position].getDescription());
         holder.ownerNameAt.setText('@' + nftModelList[position].getOwner().getUserName());
-
         holder.nftImage.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -63,8 +62,9 @@ public class NFTAdapter extends RecyclerView.Adapter<NFTAdapter.ViewHolder>
                 Intent i = new Intent(context, DetailsActivity.class);
                 i.putExtra("nftImage",nftModelList[pos].getNftPic());
                 i.putExtra("nftNameText",nftModelList[pos].getNftName());
-                i.putExtra("nftPriceETH",nftModelList[pos].getPriceETH());
+                i.putExtra("nftPriceETH",nftModelList[pos].getPriceETH() + "ETH");
                 i.putExtra("nftPriceUSD",nftModelList[pos].getPriceUSD());
+                i.putExtra("nftDescription", nftModelList[pos].getDescription());
                 context.startActivity(i);
             }
         });
@@ -80,7 +80,7 @@ public class NFTAdapter extends RecyclerView.Adapter<NFTAdapter.ViewHolder>
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
         public ImageView nftImage, userIcon;
-        public TextView nftNameText, nftPriceETH, nftPriceUSD, ownerName, ownerNameAt;
+        public TextView nftNameText, nftPriceETH, nftPriceUSD, ownerName, ownerNameAt,descriptionNft;
         public RelativeLayout relativeLayout;
 
         public ViewHolder(@NonNull View itemView)
@@ -95,6 +95,7 @@ public class NFTAdapter extends RecyclerView.Adapter<NFTAdapter.ViewHolder>
             nftPriceUSD = itemView.findViewById(R.id.nftPriceUSD);
             ownerName = itemView.findViewById(R.id.ownerName);
             ownerNameAt = itemView.findViewById(R.id.ownerNameAt);
+            descriptionNft = itemView.findViewById(R.id.descriptionNft);
 
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
 
