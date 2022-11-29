@@ -100,7 +100,6 @@ public class BidsAdapter extends RecyclerView.Adapter<BidsAdapter.ViewHolder>
                     boolean resultUpdateNftOwner = dbHelper.updateNftOwnerByNftName(bidList[position].getAmountETH(), bidList[position].getUser(),nftName);
                     boolean resultUpdateOtherUserBalance = dbHelper.updateUserBalanceByUsername(newBalanceOtherUser, username);
 
-                    Log.i("balance user", String.valueOf(newBalanceCurrent));
 
                     boolean result1 = dbHelper.deleteBidByArgs(bidList[position].getAmountETH(), bidList[position].getUser(), bidList[position].getNftModel());
                     if(resultUpdateUserC)

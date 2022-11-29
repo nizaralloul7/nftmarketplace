@@ -45,7 +45,6 @@ public class BidsActivity extends AppCompatActivity
 
         RecyclerView recyclerView = findViewById(R.id.recyClerNotifs);
 
-
         recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new GridLayoutManager(this,1));
         recyclerView.setAdapter(bidsAdapter);

@@ -57,10 +57,10 @@ public class Registration extends AppCompatActivity
                     if(result)
                     {
                         Toast.makeText(Registration.this,"Account created succssesfully !", Toast.LENGTH_LONG).show();
+                        finish();
                         Intent i = new Intent(Registration.this, LoginActivity.class);
                         i.putExtra("username", userName.getText().toString());
                         startActivity(i);
-                        finish();
                     }
                     else
                         Toast.makeText(Registration.this,"Account not created !", Toast.LENGTH_LONG).show();

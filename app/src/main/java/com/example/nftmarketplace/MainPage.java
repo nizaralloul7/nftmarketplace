@@ -18,7 +18,6 @@ public class MainPage extends AppCompatActivity
     Button btnRegister, btnLogIn;
     DBHelper db;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -31,10 +30,9 @@ public class MainPage extends AppCompatActivity
         btnLogIn = findViewById(R.id.signInButton);
 
 
-         User user1 = new User("Nizar", "Alloul", "Shigur","motdepasse123","email",14.55,R.drawable.hape);
+        User user1 = new User("Nizar", "Alloul", "Shigur","motdepasse123","email",14.55,R.drawable.hape);
         User user2 = new User("Othmane", "Lz", "TfBlade","motdepasse123","email",14.55,R.drawable.overstudy_g1);
         User user3 = new User("Mounia", "Lz", "MouniaEch","motdepasse123","email",21.55,R.drawable.anothermonkey);
-
 
 
         //User usr = db.getUser("test");
@@ -55,7 +53,7 @@ public class MainPage extends AppCompatActivity
                         new NFTModel("12.01", "14028,28USD", R.drawable.a7d84f35d60e345fd2f70d053a6d01b7,"ZED-g14",user2,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut mauris a lorem pulvinar sollicitudin non nec neque. Nullam ultricies laoreet arcu quis consequat. Vestibulum ac est scelerisque, consequat lorem id, feugiat sem."),
                 };
 
-       db.insertUser(user1);
+        db.insertUser(user1);
         db.insertUser(user2);
         db.insertUser(user3);
 
@@ -64,9 +62,6 @@ public class MainPage extends AppCompatActivity
             boolean result = db.insertNFT(nftModel);
             Log.i("inserted",String.valueOf(result));
         }
-
-
-
 
         btnRegister.setOnClickListener(new View.OnClickListener()
         {
