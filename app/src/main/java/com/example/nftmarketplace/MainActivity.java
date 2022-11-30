@@ -38,9 +38,11 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences sharedpreferences = getSharedPreferences(LoginActivity.MyPREFERENCES, Context.MODE_PRIVATE);
 
         Log.i("My Logger",sharedpreferences.getString("userName","error"));
-        User user1 = new User("Nizar", "Alloul", "Shigur","motdepasse123","email",14.55,R.drawable.hape);
-        User user2 = new User("Othmane", "Lz", "TfBlade","motdepasse123","email",14.55,R.drawable.overstudy_g1);
-        User user3 = new User("Mounia", "Lz", "MouniaEch","motdepasse123","email",21.55,R.drawable.anothermonkey);
+        User user1 = new User("Nizar", "Alloul", "Shigur","motdepasse123","nizaralloul7@gmail.com",120.04,R.drawable.profile1);
+        User user2 = new User("Othmane", "Lz", "TfBlade","motdepasse123","othmane@gmaile.com",111.00,R.drawable.profile2);
+        User user3 = new User("Mounia", "Ech", "MEchel","motdepasse123","mounia@gmail.com",314.54,R.drawable.profile3);
+        User user4 = new User("Basma", "Haimeur", "Smilie","motdepasse123","basma.haimeur@gmail.com",102.01,R.drawable.anothermonkey);
+        User user5 = new User("Yahya", "Bjrh", "Ybjrh","motdepasse123","Yahya.boujrah@gmail.com",87.14,R.drawable.profile4);
 /*
         db.insertUser(user1);
         db.insertUser(user2);
@@ -77,7 +79,9 @@ public class MainActivity extends AppCompatActivity
                 {
                         user1,
                         user2,
-                        user3
+                        user3,
+                        user4,
+                        user5
                 };
 
         List<NFTModel> nftList  = db.getNfts();
