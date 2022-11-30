@@ -94,17 +94,16 @@ public class MainActivity extends AppCompatActivity
                 switch (item.getItemId())
                 {
                     case R.id.logout :
+                        finish();
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         overridePendingTransition(0,0);
-                        finish();
                         return true;
                     case R.id.home :
+                    case R.id.addnft:
                         return true;
                     case R.id.bids :
                         startActivity(new Intent(MainActivity.this, BidsActivity.class));
                         overridePendingTransition(0,0);
-                        return true;
-                    case R.id.users :
                         return true;
                     case R.id.profile :
                         Intent i = new Intent(MainActivity.this, Profile.class);

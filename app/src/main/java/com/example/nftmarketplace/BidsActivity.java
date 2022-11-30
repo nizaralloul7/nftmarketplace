@@ -67,7 +67,7 @@ public class BidsActivity extends AppCompatActivity
                         return true;
                     case R.id.bids :
                         return true;
-                    case R.id.users :
+                    case R.id.addnft:
                         return true;
                     case R.id.profile :
                         Intent i = new Intent(BidsActivity.this, Profile.class);

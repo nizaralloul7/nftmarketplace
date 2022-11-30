@@ -5,10 +5,10 @@
         android:id="@+id/logout"
         android:icon="@drawable/ic_baseline_logout_24"/>
     <item
-        android:title="Users"
-        android:id="@+id/users"
+        android:title="Add NFT"
+        android:id="@+id/addnft"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_person_24"/>
+        android:icon="@drawable/ic_baseline_add_to_photos_24"/>
     <item
         android:title="Home"
         android:id="@+id/home"

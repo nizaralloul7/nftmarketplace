@@ -63,6 +63,7 @@ public class MainPage extends AppCompatActivity
             Log.i("inserted",String.valueOf(result));
         }
 
+
         btnRegister.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -90,7 +90,7 @@
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"
         android:id="@+id/bottonnav"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         >
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 

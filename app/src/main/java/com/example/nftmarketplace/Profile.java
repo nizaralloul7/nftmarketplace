@@ -25,7 +25,7 @@ public class Profile extends AppCompatActivity
     BottomNavigationView bottomNavigationView;
     DBHelper db;
     ImageView userIcon;
-    TextView username, emailAdress;
+    TextView username, emailAdress, arrowBack, numberOfNfts, numberBids;
     RecyclerView nftCollection;
 
     @Override
@@ -39,9 +39,21 @@ public class Profile extends AppCompatActivity
         userIcon = findViewById(R.id.userIcon);
         username = findViewById(R.id.username);
         emailAdress = findViewById(R.id.emailAdress);
+        arrowBack = findViewById(R.id.arrowBack);
+        numberOfNfts = findViewById(R.id.numberOfNfts);
+        numberBids = findViewById(R.id.numberBids);
         db = new DBHelper(this);
         Intent intent = getIntent();
 
+        arrowBack.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                finish();
+                startActivity(new Intent(Profile.this, MainActivity.class));
+            }
+        });
 
 
         User userProfile = db.getUser(intent.getStringExtra("username"));
@@ -59,22 +71,22 @@ public class Profile extends AppCompatActivity
                 switch (item.getItemId())
                 {
                     case R.id.logout :
+                        finish();
                         startActivity(new Intent(Profile.this, LoginActivity.class));
                         overridePendingTransition(0,0);
-                        finish();
                         return true;
                     case R.id.home :
                         startActivity(new Intent(Profile.this, MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.bids :
+                        startActivity(new Intent(Profile.this, BidsActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
-                    case R.id.users :
-                        return true;
+                    case R.id.addnft:
                     case R.id.profile :
                         return true;
                 }
-
                 return false;
             }
         });
@@ -83,7 +95,12 @@ public class Profile extends AppCompatActivity
 
         NFTModel[] nfts = nftList.toArray(new NFTModel[nftList.size()]);
 
-        Log.i("size", String.valueOf(nftList.size()));
+        if(nfts.length == 0)
+        {
+            numberOfNfts.setText("0");
+        }
+        else
+            numberOfNfts.setText(String.valueOf(nfts.length));
 
         nftCollection = findViewById(R.id.nftCollection);
         NFTAdapter nftAdapter = new NFTAdapter(nfts,this);

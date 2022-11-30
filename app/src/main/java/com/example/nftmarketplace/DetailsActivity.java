@@ -104,7 +104,7 @@ public class DetailsActivity extends AppCompatActivity
                         startActivity(new Intent(DetailsActivity.this, BidsActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.users :
+                    case R.id.addnft:
                         return true;
                     case R.id.profile :
                         Intent i = new Intent(DetailsActivity.this, Profile.class);

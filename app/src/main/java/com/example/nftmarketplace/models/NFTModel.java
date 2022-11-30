@@ -9,7 +9,8 @@ public class NFTModel
     private User owner;
     private String description;
 
-    public NFTModel(String priceETH, String priceUSD, Integer nftPic, String nftName, User owner, String description) {
+    public NFTModel(String priceETH, String priceUSD, Integer nftPic, String nftName, User owner, String description)
+    {
         this.priceETH = priceETH;
         this.priceUSD = priceUSD;
         this.nftPic = nftPic;

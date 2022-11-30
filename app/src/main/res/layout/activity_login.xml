@@ -41,19 +41,19 @@
         android:padding="17dp"
         android:background="@drawable/drawable_button_radius_2"
     />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:inputType="textPassword"
-        android:layout_below="@+id/userName"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:hint="Password"
-        android:padding="17dp"
-        android:background="@drawable/drawable_button_radius_2"
-        />
 
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userName"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/drawable_button_radius_2"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="17dp"
+            tools:ignore="SpeakableTextPresentCheck" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
